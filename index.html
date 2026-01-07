@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shoko Moko Saanu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #d63384;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        .heart {
+            font-size: 3em;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            background: #ff99cc;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .slideshow {
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .slideshow img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        .slideshow img.active {
+            display: block;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Happy Birthday, Shoko Moko Saanu! 🎉</h1>
+    <p class="heart">❤️❤️❤️</p>
+    <p>Just be the person who you were!</p>
+    <p>Wishing you endless happiness and joy on your special day!</p>
+    
+    <div class="message">You are loved and cherished always! 💖</div>
+    
+    <!-- Slideshow -->
+    <div class="slideshow">
+        <img src="photo1.jpg" class="active">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+        <img src="photo5.jpg">
+        <img src="photo6.jpg">
+        <img src="photo7.jpg">
+        <img src="photo8.jpg">
+    </div>
+
+    <!-- Background Music -->
+    <audio id="birthdayMusic" autoplay loop>
+        <source src="birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let index = 0;
+        function changeImage() {
+            let images = document.querySelectorAll(".slideshow img");
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }
+        setInterval(changeImage, 3000); // Change image every 3 seconds
+
+        // Auto-play music (May require user interaction on some browsers)
+        document.addEventListener("click", function() {
+            let music = document.getElementById("birthdayMusic");
+            if (music.paused) {
+                music.play();
+            }
+        });
+    </script>
+
+</body>
+</html>
